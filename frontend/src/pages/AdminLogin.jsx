@@ -306,7 +306,7 @@ export const AdminLogin = () => {
 
       {}
       <footer className="w-full max-w-7xl mx-auto px-6 py-3 flex flex-col sm:flex-row justify-between items-center border-t border-slate-200/50 text-xs text-slate-400 font-bold uppercase tracking-wider z-10 relative gap-4 mt-auto bg-[#F8FAFC]/80 backdrop-blur-sm">
-        <div>© {new Date().getFullYear()} Nexus Proctor, Academic Integrity. All rights reserved.</div>
+        <div>© {new Date().getFullYear()} Code Nexus, Academic Integrity. All rights reserved.</div>
         <div className="flex gap-6">
           <a href="#" className="hover:text-slate-600 transition-colors">Terms & Conditions</a>
           <a href="#" className="hover:text-slate-600 transition-colors">Privacy Policy</a>

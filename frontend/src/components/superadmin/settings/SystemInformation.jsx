@@ -3,7 +3,7 @@ import { Server, Database, Code, Globe, Activity } from 'lucide-react';
 
 const SystemInformation = () => {
   const sysInfo = [
-    { label: 'Nexus Proctor Version', value: 'v2.1.0-beta', icon: Code },
+    { label: 'Code Nexus Version', value: 'v2.1.0-beta', icon: Code },
     { label: 'Environment', value: 'Production', icon: Globe },
     { label: 'Prisma Version', value: '5.7.0', icon: Database },
     { label: 'Node.js Version', value: 'v24.x', icon: Server },

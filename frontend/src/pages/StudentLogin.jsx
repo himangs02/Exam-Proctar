@@ -157,7 +157,7 @@ export const LandingPage = () => {
           <div className="mt-4 lg:mt-6 flex justify-center lg:justify-start">
             <img 
               src={heroStudents} 
-              alt="Nexus Proctor Students" 
+              alt="Code Nexus Students" 
               className="max-h-[30vh] lg:max-h-[34vh] w-auto drop-shadow-2xl object-contain" 
             />
           </div>
@@ -177,8 +177,8 @@ export const LandingPage = () => {
             </h2>
             <p className="text-xs text-slate-500 text-center mb-4 max-w-xs mx-auto">
               {isSignUp 
-                ? 'Create your account to join the Nexus Proctor community.' 
-                : 'Sign in to continue your learning journey at Nexus Proctor.'}
+                ? 'Create your account to join the Code Nexus community.' 
+                : 'Sign in to continue your learning journey at Code Nexus.'}
             </p>
 
             {}
@@ -435,7 +435,7 @@ export const LandingPage = () => {
 
       {}
       <footer className="w-full max-w-7xl mx-auto px-6 py-3 flex flex-col sm:flex-row justify-between items-center border-t border-slate-200/50 text-[10px] text-slate-400 font-bold uppercase tracking-wider z-10 relative gap-3 mt-auto">
-        <div>© {new Date().getFullYear()} Nexus Proctor, Academic Integrity. All rights reserved.</div>
+        <div>© {new Date().getFullYear()} Code Nexus, Academic Integrity. All rights reserved.</div>
         <div className="flex gap-6">
           <a href="#" className="hover:text-slate-600 transition-colors">Terms & Conditions</a>
           <a href="#" className="hover:text-slate-600 transition-colors">Privacy Policy</a>

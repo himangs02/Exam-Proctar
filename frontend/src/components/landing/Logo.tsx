@@ -8,7 +8,7 @@ export function Logo({ className = "" }: { className?: string }) {
       </span>
       <span className="flex flex-col leading-none">
         <span className="font-display text-lg font-extrabold tracking-tight text-foreground">
-          Nexus<span className="text-primary"> Proctor</span>
+          Code<span className="text-primary"> Nexus</span>
         </span>
         <span className="text-[10px] font-semibold uppercase tracking-[0.18em] text-muted-foreground">
           Academic Integrity

@@ -9,7 +9,7 @@ const SuperAdminLayout = () => {
       <div className="flex-1 flex flex-col md:ml-64 overflow-hidden">
         <header className="h-16 border-b border-gray-200 bg-white flex items-center px-6 sticky top-0 z-30">
           <h1 className="text-xl font-semibold text-emerald-600 tracking-tight">
-            Nexus Super Admin
+            Code Nexus Super Admin
           </h1>
         </header>
         

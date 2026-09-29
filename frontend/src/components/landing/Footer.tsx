@@ -11,7 +11,7 @@ export function Footer() {
           <div className="md:col-span-2">
             <Logo />
             <p className="mt-4 max-w-md text-sm leading-relaxed text-muted-foreground">
-              Nexus Proctor is the academic integrity and online exam platform, powered by
+              Code Nexus is the academic integrity and online exam platform, powered by
               Geeta University. We ensure secure testing environments through advanced proctoring
               solutions.
             </p>
@@ -20,7 +20,7 @@ export function Footer() {
                 Geeta University
               </span>
               <span className="rounded-full bg-background px-3 py-1 text-xs font-semibold text-foreground shadow-sm">
-                Nexus Proctor
+                Code Nexus
               </span>
             </div>
           </div>
@@ -70,7 +70,7 @@ export function Footer() {
         </div>
 
         <div className="mt-12 border-t border-border pt-6 text-center text-xs text-muted-foreground">
-          © {new Date().getFullYear()} Nexus Proctor. All rights reserved.
+          © {new Date().getFullYear()} Code Nexus. All rights reserved.
         </div>
       </div>
     </footer>

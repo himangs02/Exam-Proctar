@@ -132,7 +132,7 @@ export const StudentDashboard = () => {
         <div className="space-y-6">
           <div className="flex items-center gap-3 mb-6 mt-2">
             <span className="text-3xl ml-1">🛡️</span>
-            <span className="text-xl font-extrabold text-gray-900 tracking-tight">Nexus Proctor</span>
+            <span className="text-xl font-extrabold text-gray-900 tracking-tight">Code Nexus</span>
           </div>
           <p className="text-[10px] font-black text-gray-400 uppercase tracking-widest px-2">Main Menu</p>
           

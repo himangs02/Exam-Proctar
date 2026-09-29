@@ -27,7 +27,7 @@ export const sendEmail = async () => {
       html: `
         <div style="font-family: sans-serif; padding: 20px; border: 1px solid #eee; border-radius: 10px;">
           <h2 style="color: #4B775E;">SMTP WORKING SUCCESSFULLY</h2>
-          <p>Your Gmail SMTP setup is working correctly for Nexus Proctor.</p>
+          <p>Your Gmail SMTP setup is working correctly for Code Nexus.</p>
           <hr />
           <p style="font-size: 0.8em; color: #666;">Sent from your local development server.</p>
         </div>
@@ -49,7 +49,7 @@ export const sendTestEmail = async (to) => {
     return transporter.sendMail({
       from: process.env.EMAIL_USER,
       to,
-      subject: "NEXUS: SMTP Diagnostic Test",
+      subject: "CODE NEXUS: SMTP Diagnostic Test",
       text: "Your SMTP configuration is working perfectly! 🚀",
       html: "<b>Your SMTP configuration is working perfectly! 🚀</b>"
     });

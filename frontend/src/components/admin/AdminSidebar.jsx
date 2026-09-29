@@ -57,7 +57,7 @@ const AdminSidebar = () => {
         {}
         <div className="flex items-center gap-3 h-20 px-6 border-b border-gray-200">
           <span className="text-2xl">🛡️</span>
-          <span className="text-xl font-extrabold text-gray-900 tracking-tight">Nexus Proctor</span>
+          <span className="text-xl font-extrabold text-gray-900 tracking-tight">Code Nexus</span>
         </div>
 
         {}

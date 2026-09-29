@@ -79,7 +79,7 @@ function HomePage() {
                 <span className="text-gold">By The World</span>
               </h1>
               <p className="mt-6 max-w-md text-base leading-relaxed text-muted-foreground">
-                Master secure assessments with Nexus Proctor — the leading exam integrity platform
+                Master secure assessments with Code Nexus — the leading exam integrity platform
                 powered by Geeta University. Advanced proctoring, live verification and reliable results.
               </p>
               <div className="mt-8 flex flex-wrap gap-4">
@@ -98,7 +98,7 @@ function HomePage() {
               <div className="absolute inset-x-6 top-10 -z-0 aspect-square rounded-full bg-gradient-to-tr from-sky/20 to-primary/10 blur-2xl" />
               <img
                 src={heroStudents}
-                alt="Nexus Proctor users collaborating together"
+                alt="Code Nexus users collaborating together"
                 width={960}
                 height={960}
                 fetchPriority="high"
@@ -194,10 +194,10 @@ function HomePage() {
                 eyebrow="About Us"
                 title={
                   <>
-                    Secure Exams with <span className="text-primary">Nexus Proctor</span>
+                    Secure Exams with <span className="text-primary">Code Nexus</span>
                   </>
                 }
-                description="Unlock secure and reliable evaluations with Nexus Proctor. Dive into a advanced suite of anti-cheating mechanism features, secure browser environments, and live tracking curated to help educators verify assessments."
+                description="Unlock secure and reliable evaluations with Code Nexus. Dive into a advanced suite of anti-cheating mechanism features, secure browser environments, and live tracking curated to help educators verify assessments."
               />
               <ul className="mt-8 space-y-4">
                 {[
@@ -256,7 +256,7 @@ function HomePage() {
           <SectionHeading
             eyebrow="Testimonials"
             title="What Our Trainees Have To Say"
-            description="Discover how Nexus Proctor has transformed online examination experiences — firsthand accounts of testing ease, reliability and secure verification."
+            description="Discover how Code Nexus has transformed online examination experiences — firsthand accounts of testing ease, reliability and secure verification."
           />
           <div className="mt-12 grid gap-6 md:grid-cols-3">
             {testimonials.map((t) => (
@@ -293,7 +293,7 @@ function HomePage() {
             <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-primary to-sky px-8 py-14 text-center shadow-xl">
               <Trophy className="mx-auto h-12 w-12 text-primary-foreground/90" />
               <h2 className="mx-auto mt-5 max-w-2xl font-display text-3xl font-extrabold text-primary-foreground sm:text-4xl">
-                Secure Your Academic Integrity Through Nexus Proctor
+                Secure Your Academic Integrity Through Code Nexus
               </h2>
               <Button
                 asChild

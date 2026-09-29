@@ -5,7 +5,7 @@ const prisma = new PrismaClient();
 
 export async function seedSuperAdmin() {
   try {
-    const email = 'admin@nexusproctor.com';
+    const email = 'admin@codenexus.com';
     const plainPassword = 'Admin@123';
     
     const existing = await prisma.user.findFirst({

@@ -13,7 +13,7 @@ export default function AboutPage() {
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <SectionHeading
               eyebrow="About Us"
-              title="Nexus Proctor"
+              title="Code Nexus"
               description="Empowering academic integrity through advanced AI-driven proctoring solutions. We ensure a secure and fair testing environment for institutions globally."
             />
           </div>
@@ -24,7 +24,7 @@ export default function AboutPage() {
             <div>
               <img 
                 src={about1} 
-                alt="About Nexus Proctor" 
+                alt="About Code Nexus" 
                 className="rounded-2xl shadow-xl w-full object-cover max-h-[500px]"
               />
             </div>
@@ -32,7 +32,7 @@ export default function AboutPage() {
               <div>
                 <h3 className="text-3xl font-bold text-slate-900 mb-4">Our Mission</h3>
                 <p className="text-slate-600 leading-relaxed text-lg">
-                  At Nexus Proctor, we believe in a world where academic assessments are trusted and secure. Our mission is to provide cutting-edge technology that safeguards the integrity of online exams, giving educators and students peace of mind.
+                  At Code Nexus, we believe in a world where academic assessments are trusted and secure. Our mission is to provide cutting-edge technology that safeguards the integrity of online exams, giving educators and students peace of mind.
                 </p>
               </div>
 

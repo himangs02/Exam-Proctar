@@ -1,8 +1,8 @@
-# 🛡️ Nexus Proctor
+# 🛡️ Code Nexus
 
 > An enterprise-grade, highly secure, and real-time online examination platform. Built with a twin-turbo architecture using React, Node.js, Express, MySQL, and Redis to handle massive concurrent student loads without breaking a sweat.
 
-Welcome to the fortress! Nexus Proctor is not your average quiz app. It is a fully-fledged, proctored examination environment featuring real-time socket monitoring, advanced code compilation, laser-beam matching UIs, and robust anti-cheat mechanisms.
+Welcome to the fortress! Code Nexus is not your average quiz app. It is a fully-fledged, proctored examination environment featuring real-time socket monitoring, advanced code compilation, laser-beam matching UIs, and robust anti-cheat mechanisms.
 
 ---
 
@@ -61,13 +61,13 @@ Our routing architecture is strictly separated by Role-Based Access Control (RBA
 
 ## 🚀 Getting Started (Local Setup)
 
-To spin up Nexus Proctor on your local machine, follow these steps exactly.
+To spin up Code Nexus on your local machine, follow these steps exactly.
 
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/Nexus-Proctor.git
-cd Nexus-Proctor
+git clone https://github.com/your-username/Code-Nexus.git
+cd Code-Nexus
 
 ```
 

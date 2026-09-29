@@ -650,7 +650,7 @@ export const TeacherDashboard = () => {
         <button onClick={() => setIsSidebarOpen(false)} className="md:hidden absolute top-4 right-4 p-2 text-gray-400 hover:text-gray-900"><X size={20} /></button>
         <div className="flex items-center gap-3 mb-10 mt-4 cursor-pointer hover:scale-[1.02] transition-transform">
           <span className="text-3xl ml-2">🛡️</span>
-          <span className="text-xl font-extrabold text-gray-900 tracking-tight hidden md:block">Nexus Proctor</span>
+          <span className="text-xl font-extrabold text-gray-900 tracking-tight hidden md:block">Code Nexus</span>
         </div>
         
         {/* 🚀 ADDED: Coding Progress link in mapping array */}

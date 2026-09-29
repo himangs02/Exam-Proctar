@@ -30,7 +30,7 @@ export async function generateReportPDF(report) {
   doc.setTextColor(...white);
   doc.setFont('helvetica', 'bold');
   doc.setFontSize(18);
-  doc.text('NEXUS PROCTOR', margin, 16);
+  doc.text('CODE NEXUS', margin, 16);
 
   doc.setFontSize(9);
   doc.setFont('helvetica', 'normal');
@@ -261,7 +261,7 @@ export async function generateReportPDF(report) {
   doc.setFontSize(6);
   doc.setFont('helvetica', 'normal');
   doc.text('This is a computer-generated document. No signature is required.', pageWidth / 2, pageHeight - 12, { align: 'center' });
-  doc.text(`NEXUS PROCTOR | ${report.exam?.name || 'Exam'} | ${new Date().toLocaleString()}`, pageWidth / 2, pageHeight - 7, { align: 'center' });
+  doc.text(`CODE NEXUS | ${report.exam?.name || 'Exam'} | ${new Date().toLocaleString()}`, pageWidth / 2, pageHeight - 7, { align: 'center' });
 
   if (y + 20 < pageHeight - 25) {
     doc.setDrawColor(...medGray);

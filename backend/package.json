@@ -1,7 +1,7 @@
 {
   "name": "nexus-backend",
   "version": "1.0.0",
-  "description": "Backend for Nexus Proctor",
+  "description": "Backend for Code Nexus",
   "main": "server.js",
   "type": "module",
   "scripts": {

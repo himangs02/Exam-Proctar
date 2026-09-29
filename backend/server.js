@@ -35,7 +35,7 @@ const startServer = async () => {
   setPracticeIO(io);
 
   httpServer.listen(PORT, () => {
-    console.log(`🚀 NEXUS PROCTOR backend running on port ${PORT}`);
+    console.log(`🚀 CODE NEXUS backend running on port ${PORT}`);
     console.log(`📡 Socket.io ready for real-time proctoring`);
   });
 };
