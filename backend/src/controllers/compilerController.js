@@ -85,6 +85,18 @@ function mapJudgeResult(data) {
 async function runCode(language, code, stdin = '', timeSec = 5, memKb = 262144) {
   console.log(`[Compiler] Running code for ${language}...`);
   
+  if (USE_JUDGE0 && JUDGE0_KEY && JUDGE0_KEY !== 'your_rapidapi_key_here') {
+    try {
+      const cfg = LANGUAGE_CONFIG[language];
+      if (!cfg) throw new Error(`Unsupported language: ${language}`);
+      const token  = await submitToJudge0(cfg.id, code, stdin, timeSec, memKb);
+      const result = await pollJudge0(token, (timeSec + 12) * 1000);
+      return mapJudgeResult(result);
+    } catch (err) {
+      console.error(`[Compiler] Judge0 execution failed for ${language}:`, err.message);
+    }
+  }
+
   if (LANGUAGE_CONFIG[language]) {
     try {
       const localResult = await runLocalCode(language, code, stdin, timeSec * 1000);
@@ -99,14 +111,6 @@ async function runCode(language, code, stdin = '', timeSec = 5, memKb = 262144) 
     } catch (err) {
       console.error(`[Compiler] Local execution failed for ${language}:`, err.message);
     }
-  }
-
-  if (USE_JUDGE0 && JUDGE0_KEY && JUDGE0_KEY !== 'your_rapidapi_key_here') {
-    const cfg = LANGUAGE_CONFIG[language];
-    if (!cfg) throw new Error(`Unsupported language: ${language}`);
-    const token  = await submitToJudge0(cfg.id, code, stdin, timeSec, memKb);
-    const result = await pollJudge0(token, (timeSec + 12) * 1000);
-    return mapJudgeResult(result);
   }
   
   return { 

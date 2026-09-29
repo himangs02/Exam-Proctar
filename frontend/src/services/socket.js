@@ -1,6 +1,16 @@
 import { io } from 'socket.io-client';
 
-const SOCKET_URL = import.meta.env.VITE_API_BASE_URL?.replace('/api', '') || 'http://localhost:5001';
+const getSocketUrl = () => {
+  if (import.meta.env.VITE_API_BASE_URL) {
+    return import.meta.env.VITE_API_BASE_URL.replace(/\/api\/?$/, '');
+  }
+  if (import.meta.env.PROD) {
+    return 'https://exam-proctar.onrender.com';
+  }
+  return 'http://localhost:5002';
+};
+
+const SOCKET_URL = getSocketUrl();
 
 let socket = null;
 

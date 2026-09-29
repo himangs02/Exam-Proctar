@@ -1,7 +1,17 @@
 import axios from 'axios';
 
+const getBaseUrl = () => {
+  if (import.meta.env.VITE_API_BASE_URL) {
+    return import.meta.env.VITE_API_BASE_URL.replace(/\/+$/, '');
+  }
+  if (import.meta.env.PROD) {
+    return 'https://exam-proctar.onrender.com/api';
+  }
+  return 'http://localhost:5002/api';
+};
+
 const api = axios.create({
-  baseURL: import.meta.env.VITE_API_BASE_URL,
+  baseURL: getBaseUrl(),
   headers: { 'Content-Type': 'application/json' },
 });
 

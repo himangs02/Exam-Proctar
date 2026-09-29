@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
-import axios from 'axios';
+import api from '../services/api';
 import { useAuth } from '../contexts/AuthContext'; 
 import { 
   CheckCircle2, 
@@ -41,7 +41,7 @@ export const LandingPage = () => {
 
   useEffect(() => {
     if (isSignUp) {
-      axios.get(`${import.meta.env.VITE_API_BASE_URL}/auth/departments`)
+      api.get('/auth/departments')
         .then(res => setDepartments(res.data.data || []))
         .catch(err => console.error("Failed to fetch departments", err));
     }
@@ -49,7 +49,7 @@ export const LandingPage = () => {
 
   useEffect(() => {
     if (credentials.departmentId) {
-      axios.get(`${import.meta.env.VITE_API_BASE_URL}/auth/departments/${credentials.departmentId}/courses`)
+      api.get(`/auth/departments/${credentials.departmentId}/courses`)
         .then(res => {
            setCourses(res.data.data || []);
            setCredentials(prev => ({ ...prev, course: '' }));
@@ -78,7 +78,7 @@ export const LandingPage = () => {
         delete payload.email;
       }
 
-      const res = await axios.post(`${import.meta.env.VITE_API_BASE_URL}${endpoint}`, payload);
+      const res = await api.post(endpoint, payload);
       
       if (res.data.success) {
         setStatus({ message: isSignUp ? 'Account created! Please sign in.' : '✅ Login successful!', type: 'success' });

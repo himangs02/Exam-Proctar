@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
-import axios from 'axios';
+import api from '../services/api';
 import { useAuth } from '../contexts/AuthContext'; 
 import { 
   CheckCircle2, 
@@ -49,7 +49,7 @@ export const AdminLogin = () => {
         delete payload.email;
       }
 
-      const res = await axios.post(`${import.meta.env.VITE_API_BASE_URL}${endpoint}`, payload);
+      const res = await api.post(endpoint, payload);
       
       if (res.data.success) {
         setStatus({ message: isSignUp ? 'Account created! Please sign in.' : '✅ Login successful!', type: 'success' });
