@@ -48,8 +48,42 @@ const LANGUAGE_CONFIGS = {
     }
 };
 
+// ── Concurrency Throttling Semaphore ──────────────────────────────────────────
+// Limits parallel compilations on the host/DGX (default: 24 parallel runs)
+const MAX_CONCURRENT_COMPILATIONS = parseInt(process.env.MAX_COMPILER_CONCURRENCY || '24', 10);
+let activeCompilations = 0;
+const compilationQueue = [];
+
+const acquireSlot = () => {
+    return new Promise((resolve) => {
+        if (activeCompilations < MAX_CONCURRENT_COMPILATIONS) {
+            activeCompilations++;
+            resolve();
+        } else {
+            compilationQueue.push(resolve);
+        }
+    });
+};
+
+const releaseSlot = () => {
+    activeCompilations--;
+    if (compilationQueue.length > 0) {
+        const next = compilationQueue.shift();
+        activeCompilations++;
+        next();
+    }
+};
 
 export const runLocalCode = async (language, code, stdin = '', timeout = 5000) => {
+    await acquireSlot();
+    try {
+        return await executeCodeInternal(language, code, stdin, timeout);
+    } finally {
+        releaseSlot();
+    }
+};
+
+const executeCodeInternal = async (language, code, stdin = '', timeout = 5000) => {
     const config = LANGUAGE_CONFIGS[language];
     if (!config) {
         throw new Error(`Unsupported language: ${language}`);

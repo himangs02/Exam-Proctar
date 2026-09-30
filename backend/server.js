@@ -25,10 +25,30 @@ const startServer = async () => {
   const PORT = process.env.PORT || 5002; 
   const httpServer = createServer(app);
 
-  // 3. Initialize Socket.IO
-  const io = new Server(httpServer, {
+  // 3. Initialize Socket.IO with multi-process Redis adapter support
+  const ioOptions = {
     cors: { origin: '*', methods: ['GET', 'POST'] },
-  });
+    pingTimeout: 60000,
+    pingInterval: 25000,
+    maxHttpBufferSize: 5e6 // 5MB buffer for proctoring batch snapshots
+  };
+
+  const io = new Server(httpServer, ioOptions);
+
+  // Optional: Connect Redis adapter if REDIS_URL is provided for PM2 cluster mode
+  if (process.env.REDIS_URL && process.env.ENABLE_SOCKET_REDIS === 'true') {
+    try {
+      const { createAdapter } = await import('@socket.io/redis-adapter');
+      const { createClient } = await import('redis');
+      const pubClient = createClient({ url: process.env.REDIS_URL });
+      const subClient = pubClient.duplicate();
+      await Promise.all([pubClient.connect(), subClient.connect()]);
+      io.adapter(createAdapter(pubClient, subClient));
+      console.log('🔗 Socket.IO Redis Adapter connected for multi-instance clustering');
+    } catch (adapterErr) {
+      console.warn('⚠️ Socket.IO Redis Adapter skipped, running in single-node mode:', adapterErr.message);
+    }
+  }
 
   setupProctorSockets(io);
   setupPracticeSockets(io);
@@ -36,7 +56,7 @@ const startServer = async () => {
 
   httpServer.listen(PORT, () => {
     console.log(`🚀 CODE NEXUS backend running on port ${PORT}`);
-    console.log(`📡 Socket.io ready for real-time proctoring`);
+    console.log(`📡 Socket.io ready for real-time proctoring (PID: ${process.pid})`);
   });
 };
 
